@@ -3,7 +3,7 @@ def demographics_cal(demo_data, selected_door, demo_weightages):
 
   selected_door_repeated = pd.concat([selected_door]*row_count, ignore_index=True)
 
-  subtracted_df = pd.concat([demo_data['Door.ID'], abs(selected_door_repeated.iloc[:, 3:] - demo_data.iloc[:, 3:])], axis=1)
+  subtracted_df = pd.concat([demo_data['Door.ID'], abs(selected_door_repeated.iloc[:, 1:] - demo_data.iloc[:, 1:])], axis=1)
 
   demo_weightages_repeated = pd.concat([demo_weightages]*row_count, ignore_index=True)
 

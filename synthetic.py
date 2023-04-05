@@ -18,14 +18,16 @@ demo_w = 0.2):
     unit_sales_mean = pd.DataFrame(test_unit_sales[test_unit_sales.select_dtypes(include=np.number).columns].mean(axis=0),columns=['mean']).transpose()
     unit_sale = unit_sale.drop('Country', axis=1)
     unit_sales_mean=unit_sales_mean.drop('Door.ID', axis=1)
-    unit_sales_value = sales_calculate(unit_sse_w, unit_trend_w, unit_sale, unit_sales_mean)
+    unit_sales_mean_list=unit_sales_mean.values.tolist()[0]
+    unit_sales_value = sales_calculate(unit_sse_w, unit_trend_w, unit_sale, unit_sales_mean_list)
     
     # Values
     test_value_sales=pd.merge(test_door, value_sale.loc[:,:], how='inner', on = "Door.ID")
     value_sales_mean = pd.DataFrame(test_value_sales[test_value_sales.select_dtypes(include=np.number).columns].mean(axis=0),columns=['mean']).transpose()
     value_sale = value_sale.drop('Country', axis=1)
     value_sales_mean=value_sales_mean.drop('Door.ID', axis=1)
-    value_sales_value = sales_calculate(value_sse_w, value_trend_w, value_sale, value_sales_mean)
+    value_sales_mean_list=value_sales_mean.values.tolist()[0]
+    value_sales_value = sales_calculate(value_sse_w, value_trend_w, value_sale, value_sales_mean_list)
     
     #Scores
     scores = pd.DataFrame({'Door.ID': unit_sale['Door.ID']})

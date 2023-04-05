@@ -23,7 +23,7 @@ def sales_calculate(size_wt, trend_wt, sales_data, test_vector):
       sales_data_list = sales_data.iloc[i,1:column_count].tolist()
       test_vector = my_list_series.tolist()
       corr = pd.Series(sales_data_list).corr(pd.Series(test_vector))
-      sales_data.iloc[i, column_count+1] = corr
+      sales_data.iloc[i, column_count+1] = -corr
 
 
   # Ranking 

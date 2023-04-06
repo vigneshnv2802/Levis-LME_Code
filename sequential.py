@@ -43,23 +43,6 @@ def sequential(test_door, unit_sale, value_sale, demographics, demo_wt, unit_tre
 
     seq_score_df[col_name] = score_temp.iloc[:,1:].sum(axis = 1)
     
-  seq_score_df['final_rank'] = seq_score_df.iloc[:,1:].sum(axis = 1)
+  seq_score_df['final.rank'] = seq_score_df.iloc[:,1:].sum(axis = 1)
     
   return seq_score_df
-
-
-
-# test_door = pd.DataFrame(pd.read_excel("test_door.xlsx", sheet_name = "Sheet1"))
-# unit_sale = pd.DataFrame(pd.read_excel("unit_sale.xlsx", sheet_name= "Sheet1"))
-# value_sale = pd.DataFrame(pd.read_excel("value_sale.xlsx", sheet_name= "Sheet1"))
-# demographics = pd.DataFrame(pd.read_excel("demographics.xlsx", sheet_name= "Sheet1"))
-# demo_wt = pd.DataFrame(pd.read_csv("demo_wt.csv"))
-# unit_trend_w = 0.05
-# unit_size_w = 0.25
-# value_trend_w = 0.15
-# value_size_w = 0.35
-# demo_w = 0.20
-
-# res = sequential(test_door, unit_sale, value_sale, demographics, demo_wt, unit_trend_w, unit_size_w, value_trend_w, value_size_w, demo_w)
-
-# res

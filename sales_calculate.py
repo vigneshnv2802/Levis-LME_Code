@@ -9,7 +9,7 @@ def sales_calculate(size_wt, trend_wt, sales_data, test_vector):
 
   column_count=len(sales_data_copy.axes[1])
 
-  checking dimensions of both dataframe 
+  # checking dimensions of both dataframe 
   if (column_count- len(test_vector)== 1):
       print("continue")
   else:
